@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>COSC 122 Index Page for Task 2</title>
+    </head>
+    <body>
+        <script>
+
+            //<h1>Task 2.1</h1>
+           //Name  Gabriel Sofekun, and student number is: 30503395    
+            var fullname = window.prompt("Enter your name");
+            var yob = window.prompt("Enter your year of birth");
+
+            //<h1>Task 2.2</h1>
+            var d = new Date();
+            var year = d.getFullYear();
+            var age = parseInt(year) - parseInt(yob);
+            
+            //<h1>Task 2.3</h1>
+            document.write("Your name is \n"+ fullname);
+            document.write("<br>");
+            document.write("Your current age is "+age);
+
+        </script>
+    </body>
+</html>

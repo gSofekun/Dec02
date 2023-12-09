@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Lab09 - Task 1</title>
+        <!-- Bootstrap CSS and JavaScript CDN links -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+        <!-- This allows the program to get the data entered by the user into the form. Do not move this -->
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    </head>
+    <body style="padding-left: 15px; padding-top: 10px;">
+        <h1>Task 1</h1>
+        <table>
+        <tr><th>IT Support User Access Form</th></tr>
+        <tr><td>
+            <br>
+            <form id="myForm">
+                <!-- Add your form elements below -->
+                <!-- name of element is firstname;  Input type is text -->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Firstname</label>
+                    <input name ="firstname" type="email" class="form-control" id="exampleFormControlInput1">
+                  </div><br>
+
+                    <!-- name of element is emailAddress;  Input type is email -->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input name ="emailAddress" type="text" class="form-control" id="exampleFormControlInput1">
+                  </div><br>
+
+             
+                   <!-- name of element is comPreference;  Input type is radio --> 
+                <label for="exampleFormControlInput1" class="form-label">Communication Preference</label><br>
+                <div class="form-check form-check-inline">
+                    <input name="comPreference" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Email">
+                    <label class="form-check-label" for="inlineRadio1">Email</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input name="comPreference" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Telephone">
+                    <label class="form-check-label" for="inlineRadio2">Telephone</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input name="comPreference" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Fax">
+                    <label class="form-check-label" for="inlineRadio3">Fax</label>
+                  </div><br><br>
+                
+                  <!-- name of element is serviceBox;  Input type is checkbox --> 
+                  <label for="exampleFormControlInput1" class="form-label">Services Needed</label><br>
+                  <div class="form-check form-check-inline">
+                    <input name="serviceBox" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Support">
+                    <label class="form-check-label" for="inlineCheckbox1">Support</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input name="serviceBox" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Tools">
+                    <label class="form-check-label" for="inlineCheckbox2">Tools</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input name="serviceBox" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Document">
+                    <label class="form-check-label" for="inlineCheckbox3">Document</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input name="serviceBox" class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Resources">
+                    <label class="form-check-label" for="inlineCheckbox4">Resources</label>
+                  </div><br><br>
+
+                  <!-- name of element is selectMenu;  Input type is select menu --> 
+                  <label class="form-check-label" for="selectMenu">Availability</label>
+                  <select name="selectMenu" class="form-select" aria-label="Default select example">
+                    <option selected>Choose a day of the Week</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                  </select><br>
+                       
+                    <!-- name of element is newtextArea;  Input type is textarea  -->
+                        <div class="mb-3">
+                          <label for="exampleFormControlTextarea1" class="form-label">Please lodge your complain here</label>
+                          <textarea name="newTextArea" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        </div><br>
+
+                  <!-- name of element is newPassword;  Input type is textarea  -->
+                        <div class="mb-3">
+                          <label for="inputPassword" class="form-label">Password</label>            
+                            <input name="newPassword" type="password" class="form-control" id="inputPassword">                        
+                        </div><br>
+
+                    <!-- Add the toggle button below -->
+                    <!-- name of element is modalButton;  type is button -->
+                    <button name="modalButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal" onclick="printInfo()">
+                      Submit</button><br><br>
+
+            </form>
+        </td></tr>
+        </table>
+
+        <!-- Add the modal for displaying the content of the form below -->
+            <!-- name of element is newModal;  type is modal -->
+            <div class="modal" id="newModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <p id="content"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        <script>
+            // This method gets all the information entered by the user into the form and prints it in the modal pop-up
+            // You do not need to change anything in the method
+            function printInfo(){
+                var elements = $("#myForm").serializeArray();
+                var content = "<br>";
+                $("#modal-title").text("Your form has been submitted!");
+                for(var i = 0; i < elements.length; i++){
+                    content += (1+i) + ". " + elements[i].value + "<br>";
+                }
+                document.getElementById("content").innerHTML = "You entered the following information into the form: " + content; 
+            }
+        </script>
+    </body>
+</html>

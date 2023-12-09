@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Lab 07 - COSC 122 Index page for Task 1</title>
+    </head>
+    <body>
+        <h1>Task 1</h1>
+        
+        <script type="text/javascript">
+            //<h1>Task 2.1</h1>
+           //Name  Gabriel Sofekun, and student number is: 30503395    
+           var fullname = window.prompt("Enter your name");
+            var yob = window.prompt("Enter your year of birth");
+
+            //<h1>Task 2.2</h1>
+            var d = new Date();
+            var year = d.getFullYear();
+            var age = parseInt(year) - parseInt(yob);
+            
+
+            var result = window.prompt("Have you had your birthday this year? (Y/N)");
+            var isOdd = "an even number";
+            var hadBirthday = "You had your birthday this year.";
+
+            if (result == "Y")
+            {
+                age = age;}
+            else{
+                age = age -1;
+                hadBirthday = "You have not had your birday this year.";}
+
+            if(age%2!=0){
+                isOdd= "an odd number";}
+           
+             //<h1>Task 2.3</h1>
+            document.write("Your name is: "+ fullname);
+            document.write("<br>");
+            document.write("Your were born in: "+ yob);
+            document.write("<br>");
+            document.write(hadBirthday);
+            document.write("<br>");
+            document.write("Your age is: "+age+".");
+            document.write("<br>");
+            document.write("Your age is "+isOdd+".");
+            
+        </script>
+        
+    </body>
+</html>
